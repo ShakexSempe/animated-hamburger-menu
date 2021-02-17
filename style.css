@@ -1,0 +1,109 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+:root{
+    --headingText: linear-gradient(0deg, rgba(51, 51, 51, 0.363), #fff000);
+    --contentText: #fff;
+    --btn: #fff44f;
+    --btnBack: #111;
+    --overlayBack: rgba(0,0,0,.7) ;
+
+    --headingFont: cursive;
+
+}
+body{
+    font-family: sans-serif;
+    overflow: hidden
+}
+.container{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background: url('b7.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlayBack);
+}
+
+.content{
+    max-width: 700px;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.content h1{
+    background: var(--headingText);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 4.3rem;
+    margin-bottom: 0.8rem;
+    font-family: var(--headingFont);
+}
+
+.content p{
+    color: var(--contentText);
+    font-size: 1.2rem;
+    font-weight: 100;
+}
+
+.btn{
+    padding: 0.75rem 1.25rem;
+    margin-top: .8rem;
+    font-weight: 550;
+    color: var(--btn);
+    background-color: var(--btnBack);
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: .3s;
+}
+.btn:hover{
+    opacity: .7;
+}
+
+footer{
+    position: fixed;
+    color: #fff000;
+    font-size: 1rem;
+    bottom: 0;
+    width: 100vw;
+    background: transparent;
+}
+footer p{
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px){
+    .container{
+        width: 100vw;
+        background-position: center;
+        animation: animate 40s ease infinite alternate;
+    }
+    @keyframes animate{
+        50%{
+            background-position: left;
+        }
+        100%{
+            background-position: right;
+        }
+    }
+    
+}
